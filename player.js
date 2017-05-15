@@ -1,3 +1,5 @@
+// Works for /index.html?width=10&height=5&seed=9
+
 var solvable = true;
 var available = {};
 var currentIdx = 0;
