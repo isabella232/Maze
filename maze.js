@@ -8,7 +8,7 @@ class Maze {
     this.width = parseInt(width, 10);
     this.createData();
     this.parseMazeData();
-    this.moves = [0,0];
+    this.moves = [0];
     this.commitMove(0);
     this.playBackIdx = 0;
   }
@@ -147,7 +147,7 @@ class Maze {
     this.playBackIdx++;
 
     var that = this;
-    if (this.moves.length > this.playBackIdx + 1) {
+    if (this.moves.length > this.playBackIdx + 2) {
       setTimeout(function() {
         that.playBackNextMove()
       }, 300);
