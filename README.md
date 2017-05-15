@@ -1,6 +1,8 @@
 # You're Lost
 You find yourself as an orange square, in a series of corridors that turn left then right then back to the left. It's a never ending maze. How will you find your way out? Is it even possible? the maze seems to go on forever and ever.
 
+![maze](maze.gif)
+
 ## The Maze
 The maze is simple. It is a JSON object with an array of cells in the format:
 
