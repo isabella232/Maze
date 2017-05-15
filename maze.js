@@ -10,7 +10,7 @@ class Maze {
     this.parseMazeData();
     this.moves = [0];
     this.commitMove(0);
-    this.playBackIdx = 0;
+    this.playBackIdx = 1;
   }
 
   createData() {
@@ -134,22 +134,22 @@ class Maze {
     return destinationIdx;
   }
 
-  playBackNextMove() {
-    var currentIdx = this.moves[this.playBackIdx];
-    var destinationIdx = this.moves[this.playBackIdx + 1];
+  playBackNextMove(playBackIdx) {
 
-    var currentNode = document.getElementById("" + currentIdx);
-    currentNode.className = currentNode.className.replace("current", "");
+    if (playBackIdx > 0) {
+      var currentIdx = this.moves[playBackIdx - 1];
+      var currentNode = document.getElementById("" + currentIdx);
+      currentNode.className = currentNode.className.replace("current", "");
+    }
 
+    var destinationIdx = this.moves[playBackIdx];
     var destinationNode = document.getElementById("" + destinationIdx)
     destinationNode.className += " current";
 
-    this.playBackIdx++;
-
     var that = this;
-    if (this.moves.length > this.playBackIdx + 2) {
+    if (this.moves.length > playBackIdx + 1) {
       setTimeout(function() {
-        that.playBackNextMove()
+        that.playBackNextMove(playBackIdx + 1);
       }, 300);
     }
   }
@@ -218,7 +218,7 @@ class Maze {
   }
 
   stop(solvable) {
-    this.playBackNextMove();
+    this.playBackNextMove(0);
   }
 }
 
