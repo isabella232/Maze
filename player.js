@@ -4,7 +4,7 @@ var currentIdx = 0;
 var counter = 0;
 var previous = null;
 
-while (solvable && counter < 20000 && currentIdx < maze.height * maze.width - 1) {
+while (solvable && counter < maze.height * maze.width && currentIdx < maze.height * maze.width - 1) {
   available = maze.getAvailableDirections();
 
   if (available.r && !isMoveToPrevious("r")) {
@@ -20,10 +20,12 @@ while (solvable && counter < 20000 && currentIdx < maze.height * maze.width - 1)
     stop(solvable);
   }
 
-  previous = self.currentIdx;
-  self.currentIdx = maze.currentIdx();
+  previous = currentIdx;
+  currentIdx = maze.currentIdx();
   counter++;
 }
+
+maze.stop(solvable);
 
 function isMoveToPrevious(direction) {
   if (previous === null) {
@@ -32,5 +34,3 @@ function isMoveToPrevious(direction) {
     return maze.idxForMove(direction) === previous;
   }
 }
-
-maze.stop(solvable);
