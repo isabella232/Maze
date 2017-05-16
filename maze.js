@@ -59,9 +59,10 @@ class Maze {
     style.type = 'text/css';
 
     var cellWidth = 100 / this.width * 0.8;
+    var cellHeight = 100 / this.width;
     var borderWidth = 100 / this.width * 0.08;
 
-    style.innerHTML = '.node { width: ' + cellWidth + 'vw; height: ' + cellWidth + 'vw; border: ' + borderWidth + 'vw solid #DDD; }';
+    style.innerHTML = '.node { width: ' + cellWidth + 'vw; height: ' + cellHeight + 'vw; border: ' + borderWidth + 'vw solid #DDD; }';
     style.innerHTML += ' .top { border-top: ' + borderWidth + 'vw solid #CCC; }';
     style.innerHTML += ' .right { border-right: ' + borderWidth + 'vw solid #CCC; }';
     style.innerHTML += ' .bottom { border-bottom: ' + borderWidth + 'vw solid #CCC; }';
