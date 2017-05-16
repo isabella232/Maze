@@ -60,7 +60,7 @@ class Maze {
 
     var cellWidth = 100 / this.width * 0.8;
     var cellHeight = 100 / this.width;
-    var borderWidth = 100 / this.width * 0.08;
+    var borderWidth = 100 / this.width * 0.1;
 
     style.innerHTML = '.node { width: ' + cellWidth + 'vw; height: ' + cellHeight + 'vw; border: ' + borderWidth + 'vw solid #DDD; }';
     style.innerHTML += ' .top { border-top: ' + borderWidth + 'vw solid #CCC; }';
