@@ -59,7 +59,7 @@ class Maze {
     style.type = 'text/css';
 
     var cellWidth = 100 / this.width * 0.8;
-    var borderWidth = 100 / this.width * 0.1;
+    var borderWidth = 100 / this.width * 0.08;
 
     style.innerHTML = '.node { width: ' + cellWidth + 'vw; height: ' + cellWidth + 'vw; border: ' + borderWidth + 'vw solid #DDD; }';
     style.innerHTML += ' .top { border-top: ' + borderWidth + 'vw solid #CCC; }';
@@ -74,13 +74,20 @@ class Maze {
   parseMazeData() {
     this.setupStyling();
 
+    var row;
     var cells = this.data["cells"];
 
     for (var idx in cells) {
+      if(idx % this.width === 0) {
+        row = document.createElement("div");
+        row.className = "row";
+        this.addNode(row);
+      }
+
       var cellObj = cells[idx]
       var node = this.createNode(cellObj);
       node.id = idx;
-      this.addNode(node);
+      row.appendChild(node);
     }
   }
 
