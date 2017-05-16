@@ -257,6 +257,7 @@ function initializeMaze() {
   maze.moveDown               = _maze.moveDown.bind(_maze);
   maze.moveUp                 = _maze.moveUp.bind(_maze);
   maze.stop                   = _maze.stop.bind(_maze);
+  maze.idxForMove             = _maze.idxForMove.bind(_maze);
   maze.isSolved               = _maze.isSolved.bind(_maze);
 }
 
