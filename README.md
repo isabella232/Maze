@@ -24,10 +24,10 @@ Each cell contains 4 properties: (u)p, (r)ight, (d)own, (l)eft. These are boolea
 
 **The maze doesn't render correctly in the browser at widths over 190.**
 
-The maze is randomly generated, but can be seeded by using the `seed=___` url parameter in order to repeatable mazes to test and compete with.
+The maze is randomly generated, but can be seeded by using the `seed=___` url parameter in order to do repeatable mazes to test and compete with.
 
 ## Player
-The player is the code the instructs how to navigate the maze. To move in the maze, call one of the maze movement functions:
+The player is the code that instructs how to navigate the maze. To move in the maze, call one of the maze movement functions:
 
 ```
 maze.moveUp();
