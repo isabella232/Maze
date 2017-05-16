@@ -6,7 +6,7 @@ var currentIdx = 0;
 var counter = 0;
 var previous = null;
 
-while (solvable && counter < maze.height * maze.width && currentIdx < maze.height * maze.width - 1) {
+while (solvable && counter < 1000 && !maze.isSolved()) {
   available = maze.getAvailableDirections();
 
   if (available.r && !isMoveToPrevious("r")) {

@@ -229,6 +229,10 @@ class Maze {
   stop(solvable) {
     this.playBackNextMove(0);
   }
+
+  isSolved() {
+    return this.currentIdx === this.width * this.height - 1;
+  }
 }
 
 // STATIC METHODS
@@ -253,6 +257,7 @@ function initializeMaze() {
   maze.moveDown               = _maze.moveDown.bind(_maze);
   maze.moveUp                 = _maze.moveUp.bind(_maze);
   maze.stop                   = _maze.stop.bind(_maze);
+  maze.isSolved               = _maze.isSolved.bind(_maze);
 }
 
 initializeMaze();
