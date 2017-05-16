@@ -72,7 +72,7 @@ On the 3 mazes that have solutions, they will be rated on how few moves are requ
 
 On the 3 mazes that do not have solutions, they will be rated on how few moves are required to determine that the maze is not solvable.
 
-On unsolvable mazes, if an incorrect guess at solvability is made (i.e. a maze is reported as unsolvable when it is solvable) the team will be given the worst score to solve the maze of all the other competitors plus 1 additional move. For example, if the number of moves to solve the maze are 1000, 2000, and 3000 then a team that reports that the maze is not solvable will be given a score of 3001.
+On solvable mazes, if an incorrect guess at solvability is made (i.e. a maze is reported as unsolvable when it is solvable) the team will be given the worst score to solve the maze of all the other competitors plus 1 additional move. For example, if the number of moves to solve the maze are 1000, 2000, and 3000 then a team that reports that the maze is not solvable will be given a score of 3001.
 
 The overall winner will be the team that has the lowest combined score for all 6 mazes combined.
 
