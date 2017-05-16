@@ -157,7 +157,8 @@ class Maze {
 // PUBLIC FUNCTIONS
 
   currentIdx() {
-    return this.moves[this.moves.length - 1];
+    const index = this.moves[this.moves.length - 1];
+    return index >= 0 ? index : 0;
   }
 
   getAvailableDirections() {
@@ -229,8 +230,21 @@ function getURLParameter(name) {
 }
 
 // MAZE INSTANTIATION
+var maze = {};
 
-Math.seedrandom(getURLParameter("seed"));
-var height = getURLParameter("height");
-var width = getURLParameter("width");
-var maze = new Maze(height, width);
+function initializeMaze() {
+  Math.seedrandom(getURLParameter("seed"));
+  var height = getURLParameter("height");
+  var width = getURLParameter("width");
+  var _maze = new Maze(height, width);
+
+  maze.getAvailableDirections = _maze.getAvailableDirections.bind(_maze);
+  maze.currentIdx             = _maze.currentIdx.bind(_maze);
+  maze.moveLeft               = _maze.moveLeft.bind(_maze);
+  maze.moveRight              = _maze.moveRight.bind(_maze);
+  maze.moveDown               = _maze.moveDown.bind(_maze);
+  maze.moveUp                 = _maze.moveUp.bind(_maze);
+  maze.stop                   = _maze.stop.bind(_maze);
+}
+
+initializeMaze();
