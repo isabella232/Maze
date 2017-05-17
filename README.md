@@ -61,3 +61,23 @@ When you reach a point where you have either made it to the final square of the 
 `moveLeft()` - moves the player Left in the maze and returns the new current index of the player. If `moveLeft()` is called when it is not an available move, then the current index is returned and no move is recorded.
 
 `stop(solvable)` - should be called when a player has either completed the maze or they have determined the maze to not be solvable and they are lost forever. This initiates the playback of the journey through the maze for all to see.
+
+## Scoring Rules
+
+Solutions will be scored by running them through 3 mazes with known solutions and 3 mazes that do not have solutions. The mazes could be of any size, and will not all be 100x50.
+
+On the 3 mazes that have solutions, they will be rated on how few moves are required to navigate to the exit of the maze (lower right corner).
+
+On the 3 mazes that do not have solutions, they will be rated on how few moves are required to determine that the maze is not solvable.
+
+On solvable mazes, if an incorrect guess at solvability is made (i.e. a maze is reported as unsolvable when it is solvable) the team will be given the worst score to solve the maze of all the other competitors plus 1 additional move. For example, if the number of moves to solve the maze are 1000, 2000, and 3000 then a team that reports that the maze is not solvable will be given a score of 3001.
+
+The overall winner will be the team that has the lowest combined score for all 6 mazes combined.
+
+All solutions must be able to be run within a time limit (TBD, probably on the order of 5 seconds for the 100x50 maze and it would scale as the maze size increases or decreases) in order that attempts to determine solutions via manual analysis cannot be used.
+
+### Prohibited
+* Parsing the DOM to collect the entire maze data is not permitted.
+* Accessing the maze data without using the API.
+
+However, other creative solutions can be used and are encouraged.
