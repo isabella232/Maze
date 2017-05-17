@@ -22,8 +22,6 @@ this.data = {
 
 Each cell contains 4 properties: (u)p, (r)ight, (d)own, (l)eft. These are boolean values that represent whether you can go that direction or not from that cell. The maze can be any size by changing the url parameters to include `height=___&width=___`. If the parameters are not included the default maze size is 100 wide and 50 high.
 
-**The maze doesn't render correctly in the browser at widths over 190.**
-
 The maze is randomly generated but can be seeded by using the `seed=___` url parameter in order to do repeatable mazes to test and compete with.
 
 ## Player
@@ -36,7 +34,7 @@ maze.moveDown();
 maze.moveLeft();
 ```
 
-When you reach a point where you have either made it to the final square of the maze (`maze.height * maze.width - 1`), or you think that the maze is unsolvable, then call the `maze.stop(solvable)` function and your answer to whether you solved it or not. This will initiate a playback of your journey through the maze for you to see.
+When you reach a point where you have either made it to the final square of the maze (`isSolved()`), or you think that the maze is unsolvable, then call the `maze.stop(solvable)` function and your answer to whether you solved it or not. This will initiate a playback of your journey through the maze for you to see.
 
 ## Maze API
 
