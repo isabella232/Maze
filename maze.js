@@ -231,7 +231,7 @@ class Maze {
   }
 
   isSolved() {
-    return this.currentIdx === this.width * this.height - 1;
+    return this.currentIdx() === this.width * this.height - 1;
   }
 }
 
