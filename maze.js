@@ -2,10 +2,11 @@
 var PROBABILITY = 0.6;
 
 class Maze {
-  constructor(height = 50, width = 100) {
+  constructor(height = 50, width = 100, speed = 30) {
     this.data = { cells: [] }
     this.height = parseInt(height, 10);
     this.width = parseInt(width, 10);
+    this.speed = parseInt(speed, 10);
     this.createData();
     this.parseMazeData();
     this.moves = [0];
@@ -158,7 +159,7 @@ class Maze {
     if (this.moves.length > playBackIdx + 1) {
       setTimeout(function() {
         that.playBackNextMove(playBackIdx + 1);
-      }, 300);
+      }, this.speed);
     }
   }
 
@@ -248,7 +249,8 @@ function initializeMaze() {
   Math.seedrandom(getURLParameter("seed"));
   var height = getURLParameter("height");
   var width = getURLParameter("width");
-  var _maze = new Maze(height, width);
+  var speed = getURLParameter("speed");
+  var _maze = new Maze(height, width, speed);
 
   maze.getAvailableDirections = _maze.getAvailableDirections.bind(_maze);
   maze.currentIdx             = _maze.currentIdx.bind(_maze);
