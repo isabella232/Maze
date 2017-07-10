@@ -81,3 +81,9 @@ All solutions must be able to be run within a time limit (TBD, probably on the o
 * Accessing the maze data without using the API.
 
 However, other creative solutions can be used and are encouraged.
+
+# Solutions
+* [Depth First Search](https://github.com/Skookum/dolores/blob/master/player.js)
+* [Pac-Man](https://github.com/Skookum/MazeApollo)
+* [Computer Vision](https://github.com/Skookum/discover-the-maze)
+* [Genetic Algorithm](https://github.com/Skookum/dolores/tree/Thor)
